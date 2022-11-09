@@ -1,5 +1,5 @@
 import Home from "./pages/Home"
-import { Route, Routes, useNavigate } from "react-router-dom"
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom"
 import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth"
@@ -106,7 +106,7 @@ function App() {
   return (
     <UserContext.Provider value={store}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

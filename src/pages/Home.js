@@ -15,7 +15,7 @@ export default function Home() {
           </span>
         </div>
 
-        <h4>Your Email is : {user.email}</h4>
+        <h4>Your Email is : {user?.email}</h4>
       </div>
     </>
   )
